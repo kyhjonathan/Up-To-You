@@ -1,6 +1,5 @@
 import { useState } from "react";
-import malaxiangguo from "../images/ma-la-xiang-guo.jpg";
-import chickenrice from "../images/hainanese-chicken-rice.jpg";
+import { foodChoices } from "../images/FoodImages";
 import "./ChooseFood.css";
 
 interface ChooseFoodProps {
@@ -8,8 +7,6 @@ interface ChooseFoodProps {
 }
 
 function ChooseFood({ position }: ChooseFoodProps) {
-  const foodChoices = [{ src: malaxiangguo }, { src: chickenrice }];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextChoice = () => {
     setCurrentIndex((prevIndex) =>
@@ -19,7 +16,7 @@ function ChooseFood({ position }: ChooseFoodProps) {
 
   return (
     <div style={{ width: "50%", float: position }}>
-      <img className="food-picture" src={foodChoices[currentIndex].src} />
+      <img className="food-picture" src={foodChoices[currentIndex].image_src} />
       <div style={{ textAlign: "center" }}>
         <button className="choose-button" onClick={nextChoice}>
           Yes
