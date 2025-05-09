@@ -14,7 +14,8 @@ function App() {
           </span>
         </p>
       </div>
-      <ChooseFood />
+      <ChooseFood position="left" />
+      <ChooseFood position="right" />
       <div></div>
     </>
   );
