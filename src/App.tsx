@@ -16,7 +16,6 @@ function App() {
       </div>
       <ChooseFood position="left" />
       <ChooseFood position="right" />
-      <div></div>
     </>
   );
 }
