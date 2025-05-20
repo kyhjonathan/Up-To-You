@@ -1,0 +1,17 @@
+.nav-link {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.nav-bar {
+  /* border: 2px solid #ff6b6b; */
+  /* background: linear-gradient(to right, #e66465, #9198e5); */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-button {
+  margin: 10px;
+  padding: 10px;
+}

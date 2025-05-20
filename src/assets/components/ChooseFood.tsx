@@ -16,7 +16,11 @@ function ChooseFood({ position }: ChooseFoodProps) {
 
   return (
     <div style={{ width: "50%", float: position }}>
-      <img className="food-picture" src={foodChoices[currentIndex].image_src} />
+      <img
+        className="food-picture"
+        src={foodChoices[currentIndex].image_src}
+        style={{ border: "2px solid black" }}
+      />
       <div style={{ textAlign: "center" }}>
         <button className="choose-button" onClick={nextChoice}>
           Yes

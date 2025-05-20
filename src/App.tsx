@@ -1,21 +1,21 @@
 import "./App.css";
-import ChooseFood from "./assets/components/ChooseFood";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavigationBar from "./assets/layouts/NavigationBar/NavigationBar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
     <>
-      <div>
-        <h1 className="title">Hello</h1>
-        <p style={{ color: "blue" }}>What you want eat?</p>
-        <p>
-          <span style={{ color: "red" }}>I don't know </span>
-          <span style={{ fontSize: "100px", fontWeight: "bold" }}>
-            UP TO YOU
-          </span>
-        </p>
-      </div>
-      <ChooseFood position="left" />
-      <ChooseFood position="right" />
+      <Router>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Router>
     </>
   );
 }
