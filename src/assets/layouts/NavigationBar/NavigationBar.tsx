@@ -15,7 +15,7 @@ const NavigationBar = () => {
             <Nav
               style={{
                 display: "flex",
-                width: "80%",
+                width: "100%",
                 justifyContent: "space-evenly",
               }}
             >
@@ -23,9 +23,9 @@ const NavigationBar = () => {
                 className="nav-button"
                 component={Link}
                 to="/"
-                variant="outlined"
+                variant="contained"
                 color={location.pathname === "/" ? "primary" : "inherit"}
-                // sx={{ marginRight: 2 }}
+                sx={{ borderRadius: "10px" }}
               >
                 Home
               </Button>
@@ -34,7 +34,8 @@ const NavigationBar = () => {
                 component={Link}
                 to="/about"
                 variant="contained"
-                color={location.pathname === "/" ? "primary" : "inherit"}
+                color={location.pathname === "/about" ? "primary" : "inherit"}
+                sx={{ borderRadius: "10px" }}
               >
                 About
               </Button>
@@ -43,7 +44,8 @@ const NavigationBar = () => {
                 component={Link}
                 to="/contact"
                 variant="contained"
-                color={location.pathname === "/" ? "primary" : "inherit"}
+                color={location.pathname === "/contact" ? "primary" : "inherit"}
+                sx={{ borderRadius: "10px" }}
               >
                 Contact
               </Button>
