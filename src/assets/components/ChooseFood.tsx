@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { foodChoices } from "../images/FoodImages";
 import "./ChooseFood.css";
+import { IconButton } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 interface ChooseFoodProps {
   position: "left" | "right";
@@ -22,10 +24,13 @@ function ChooseFood({ position }: ChooseFoodProps) {
         style={{ border: "2px solid black" }}
       />
       <div style={{ textAlign: "center" }}>
-        <button className="choose-button" onClick={nextChoice}>
+        {/* <button className="choose-button" onClick={nextChoice}>
           Yes
         </button>
-        <button className="choose-button">No</button>
+        <button className="choose-button">No</button> */}
+        <IconButton>
+          <CheckCircleIcon />
+        </IconButton>
       </div>
     </div>
   );
