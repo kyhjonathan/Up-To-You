@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { foodChoices } from "../images/FoodImages";
 import "./ChooseFood.css";
+import { IconButton } from "@mui/material";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
 interface ChooseFoodProps {
   position: "left" | "right";
@@ -22,10 +25,41 @@ function ChooseFood({ position }: ChooseFoodProps) {
         style={{ border: "2px solid black" }}
       />
       <div style={{ textAlign: "center" }}>
-        <button className="choose-button" onClick={nextChoice}>
-          Yes
-        </button>
-        <button className="choose-button">No</button>
+        <IconButton
+          size="large"
+          color="success"
+          onClick={nextChoice}
+          sx={{
+            margin: "0 10px",
+            "& .MuiSvgIcon-root": { fontSize: 40 },
+            "&:hover": {
+              backgroundColor: "#e8f5e9",
+              "& .MuiSvgIcon-root": {
+                transform: "scale(1.2)",
+                transition: "transform 0.3s",
+              },
+            },
+          }}
+        >
+          <ThumbUpIcon />
+        </IconButton>
+        <IconButton
+          size="large"
+          color="error"
+          sx={{
+            margin: "0 10px",
+            "& .MuiSvgIcon-root": { fontSize: 40 },
+            "&:hover": {
+              backgroundColor: "#ffebee",
+              "& .MuiSvgIcon-root": {
+                transform: "scale(1.2)",
+                transition: "transform 0.3s",
+              },
+            },
+          }}
+        >
+          <ThumbDownIcon />
+        </IconButton>
       </div>
     </div>
   );
