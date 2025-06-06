@@ -54,6 +54,7 @@ const NavigationBar = () => {
                 component={Link}
                 to="/signin"
                 variant="contained"
+                color={location.pathname === "/signin" ? "primary" : "inherit"}
                 sx={{ borderRadius: "10px" }}
               >
                 Sign In

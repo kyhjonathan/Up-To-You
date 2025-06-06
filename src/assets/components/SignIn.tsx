@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../contexts/authContexts";
-import { useNavigate } from "react-router-dom";
-import { Button, TextField, Box, Alert } from "@mui/material";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Button, TextField, Box, Alert, Link } from "@mui/material";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -18,9 +18,9 @@ const SignIn = () => {
     try {
       setError("");
       setLoading(true);
-      await login(email, password); // Your Firebase function!
-      navigate("/"); // Redirect after successful login
-    } catch (error) {
+      await login(email, password);
+      navigate("/");
+    } catch {
       setError("Failed to sign in. Check your credentials.");
     }
 
@@ -61,10 +61,14 @@ const SignIn = () => {
         fullWidth
         variant="contained"
         disabled={loading}
-        sx={{ mt: 2 }}
+        sx={{ my: 2 }}
       >
         {loading ? "Signing In..." : "Sign In"}
       </Button>
+
+      <Link component={RouterLink} to="/signup">
+        Not a User? Sign Up!
+      </Link>
     </Box>
   );
 };
