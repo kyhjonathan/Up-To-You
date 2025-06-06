@@ -49,6 +49,15 @@ const NavigationBar = () => {
               >
                 Contact
               </Button>
+              <Button
+                className="nav-button"
+                component={Link}
+                to="/signin"
+                variant="contained"
+                sx={{ borderRadius: "10px" }}
+              >
+                Sign In
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
