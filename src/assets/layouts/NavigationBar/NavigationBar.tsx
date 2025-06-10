@@ -1,8 +1,8 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import "./NavigationBar.css";
-import { Button, IconButton } from "@mui/material";
-import { AccountCircle } from "@mui/icons-material";
+import { Button } from "@mui/material";
+import ProfileIcon from "../../components/ProfileIcon";
 
 const NavigationBar = () => {
   const location = useLocation();
@@ -21,12 +21,14 @@ const NavigationBar = () => {
               }}
             >
               <div
-                style={{
-                  display: "flex",
-                  gap: "3rem",
-                  justifyContent: "center",
-                  flex: 1,
-                }}
+                style={
+                  {
+                    // display: "flex",
+                    // gap: "3rem",
+                    // justifyContent: "center",
+                    // flex: 1,
+                  }
+                }
               >
                 <Button
                   className="nav-button"
@@ -62,16 +64,7 @@ const NavigationBar = () => {
                 </Button>
               </div>
               <div style={{ marginLeft: "auto" }}>
-                <IconButton
-                  component={Link}
-                  to="/signin"
-                  color={
-                    location.pathname === "/signin" ? "primary" : "inherit"
-                  }
-                  size="medium"
-                >
-                  <AccountCircle sx={{ fontSize: 40 }} />
-                </IconButton>
+                <ProfileIcon />{" "}
               </div>
             </Nav>
           </Navbar.Collapse>
